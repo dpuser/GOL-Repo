@@ -14,7 +14,7 @@ spec:
          - name: sample-pod
            image: docker.io/3122022/gameoflife-image:latest
            ports:
-           - containerPort: 8080
+           - containerPort: 8081
 ---
 apiVersion: v1
 kind: Service
@@ -25,7 +25,7 @@ metadata:
 spec:
   type: NodePort
   ports: 
-  - port: 8080
+  - port: 8081
     nodePort: 30005
     protocol: TCP
   selector:
