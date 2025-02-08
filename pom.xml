@@ -492,6 +492,31 @@
                         <version>2.1</version>
                     </plugin>
                 </plugins>
+                <plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.7</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>prepare-agent</goal>
+            </goals>
+            <configuration>
+                <excludes>
+                    <exclude>java/util/UUID</exclude>
+                </excludes>
+            </configuration>
+        </execution>
+        <execution>
+            <id>report</id>
+            <phase>verify</phase>
+            <goals>
+                <goal>report</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+
             </reporting>
         </profile>
     </profiles>
