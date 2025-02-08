@@ -62,7 +62,7 @@ stages {
     stage('Build and Push Docker Image') {
       steps {
         sh label: '', script: '''sudo docker build -t gameoflife-image:$BUILD_NUMBER .
-                                 sudo docker tag gameoflife-image:$BUILD_NUMBER docker.io/3122022/gameoflife-image:$BUILD_NUMBER
+                                 sudo docker tag gameoflife-image:$BUILD_NUMBER docker.io/raknas000/gameoflife-image:$BUILD_NUMBER
                                  docker push docker.io/3122022/gameoflife-image:$BUILD_NUMBER'''
                                  
       }
@@ -75,9 +75,9 @@ stages {
  }
   stage('Apply Kubernetes files') {
             steps {
-             sh label: '', script: '''scp *.yml devops@172.28.96.203:/home/jenkins
-                                  ssh devops@172.28.96.203 kubectl apply -f deploy-kube.yml
-                                  ssh devops@172.28.96.203 kubectl apply -f service.yml'''
+             sh label: '', script: '''scp *.yml jenkins@172.31.24.24:/home/jenkins
+                                  ssh jenkins@172.31.24.24 kubectl apply -f deploy-kube.yml
+                                  ssh jenkins@172.31.24.24 kubectl apply -f service.yml'''
            
         }
      }
