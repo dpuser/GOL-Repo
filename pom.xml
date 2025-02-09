@@ -21,9 +21,9 @@
         <jelastic.environment>wakaleo</jelastic.environment>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <jacoco.version>0.8.10</jacoco.version>
+        <!-- <jacoco.version>0.8.10</jacoco.version> -->
         <surefire.version>3.1.2</surefire.version>
-        <jacocoArgLine>-javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar=destfile=${project.build.directory}/jacoco.exec,excludes=java/util/UUID</jacocoArgLine>
+        <!-- <jacocoArgLine>-javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar=destfile=${project.build.directory}/jacoco.exec,excludes=java/util/UUID</jacocoArgLine> -->
     </properties>
 
     <scm>
@@ -41,7 +41,7 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
-            <plugin>
+            <!-- <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
@@ -79,9 +79,9 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
             <!-- CODE COVERAGE -->
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.10</version>
@@ -101,7 +101,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
 
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
@@ -309,11 +309,11 @@
                                     <artifactId>maven-project-info-reports-plugin</artifactId>
                                     <version>2.7</version>
                                 </plugin>
-                                <plugin>
+                                <!-- <plugin>
                                     <groupId>org.jacoco</groupId>
                                     <artifactId>jacoco-maven-plugin</artifactId>
-                                    <version>0.8.7</version>
-                                </plugin>
+                                    <version>0.8.10</version>
+                                </plugin> -->
                                 <plugin>
                                     <groupId>org.apache.maven.plugins</groupId>
                                     <artifactId>maven-checkstyle-plugin</artifactId>
@@ -347,7 +347,7 @@
                                         <xmlOutput>true</xmlOutput>
                                     </configuration>
                                 </plugin>
-                                <plugin>
+                                <!-- <plugin>
                                     <artifactId>maven-javadoc-plugin</artifactId>
                                     <version>2.9.1</version>
                                     <configuration>
@@ -366,7 +366,7 @@
                                             -enumerations -enumconstants
                                         </additionalparam>
                                     </configuration>
-                                </plugin>
+                                </plugin> -->
                                 <plugin>
                                     <groupId>org.apache.maven.plugins</groupId>
                                     <artifactId>maven-jxr-plugin</artifactId>
@@ -470,7 +470,7 @@
                             <xmlOutput>true</xmlOutput>
                         </configuration>
                     </plugin>
-                    <plugin>
+                    <!-- <plugin>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>2.7</version>
                         <configuration>
@@ -489,13 +489,13 @@
                                 -enumerations -enumconstants
                             </additionalparam>
                         </configuration>
-                    </plugin>
+                    </plugin> -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jxr-plugin</artifactId>
                         <version>2.1</version>
                     </plugin>
-                    <plugin>
+                    <!-- <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
                         <version>0.8.10</version>
@@ -511,7 +511,7 @@
                             </configuration>
                         </execution>
                     </executions>
-                </plugin>
+                </plugin> -->
                 </plugins>
             </reporting>
         </profile>
