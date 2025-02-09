@@ -24,11 +24,11 @@ pipeline {
             }
         }
 
-        /* stage('Unit Test Results') {
+        stage('Unit Test Results') {
             steps {
                 junit '**/target/surefire-reports/TEST-*.xml'
             }
-        } */
+        }
 
         /* stage('Sonarqube') {
             environment {
